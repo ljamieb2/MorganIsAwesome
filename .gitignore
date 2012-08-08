@@ -1,0 +1,6 @@
+bin
+.metadata
+/out/
+.project
+project.properties
+proguard-project.txt

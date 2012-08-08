@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Type, and I will respond.</string>
+    <string name="app_name">Morgan is awesome</string>
+    <string name="response1">Hello, my name is Tom. How did you come by my application?</string>
+    <string name="response2">Very interesting. And what is your name?</string>
+    <string name="response3">I have been waiting for you.</string>
+    <string name="response4">You may be wondering how I know you.</string>
+    <string name="response5">I can read your mind.</string>
+    <string name="response6">You are thinking about potatos.</string>
+    <string name="response7">Yes you are.</string>
+    <string name="response8">You should go eat some.</string>
+    <string name="response9">I would eat some, but alas, I am but a mere application.</string>
+    <string name="response10">I must leave now, good-bye.</string>
+
+</resources>
