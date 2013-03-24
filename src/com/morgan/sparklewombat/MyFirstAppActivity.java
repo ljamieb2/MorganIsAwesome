@@ -1,18 +1,19 @@
-package com.example.myfirstapp;
+package com.morgan.sparklewombat;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Scroller;
 import android.widget.TextView;
-import android.widget.Toast;
 //test
 public class MyFirstAppActivity extends Activity {
 	
 	private int count;
+	String responseDialog = "";
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,8 +24,14 @@ public class MyFirstAppActivity extends Activity {
 
 
 		et = (EditText) findViewById(R.id.edittext);
+
+		
 		b = (Button) findViewById(R.id.button);
 		final TextView rtv = (TextView) findViewById(R.id.responseTextView);
+		rtv.setScroller(new Scroller(getBaseContext()));
+		rtv.setMaxLines(25);
+		rtv.setVerticalScrollBarEnabled(true);
+		rtv.setMovementMethod(new ScrollingMovementMethod());
 		final String responsearray[] = new String[10];
 		
 			responsearray[0] = getResources().getString(R.string.response1);
@@ -42,23 +49,28 @@ public class MyFirstAppActivity extends Activity {
 		b.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				String userText = et.getText().toString();
-				if (count==4) {
-					rtv.setText(responsearray[count] + " " + et);	
+				responseDialog = responseDialog + "You: " + userText;
+				et.setText("");
+				if (count==2) {
+					responseDialog = responseDialog + "\n" + responsearray[count] + " " + userText + "\n\n";
+					rtv.setText(responseDialog);	
 				}
 				else
-				{rtv.setText(responsearray[count]);}
+				{	responseDialog = responseDialog + "\n" + responsearray[count] + "\n\n";
+				rtv.setText(responseDialog);
+				}
 				
-				Log.w("the count", Integer.toString(count));
-				count++;
+
 
 				if (count==10) {
+					responseDialog = "";
 					count=0;
 				}
 				
 				
-				Toast msg = Toast.makeText(getBaseContext(), userText,
+				/*Toast msg = Toast.makeText(getBaseContext(), userText,
 						Toast.LENGTH_SHORT);
-				msg.show();
+				msg.show();*/
 				
 				
 				
