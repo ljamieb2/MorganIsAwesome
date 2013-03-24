@@ -1,6 +1,13 @@
-bin
-.metadata
-/out/
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+.classpath
 .project
-project.properties
 proguard-project.txt
+project.properties
+gen/*
