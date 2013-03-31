@@ -7,3 +7,12 @@
 *.o
 *.so
 gen/*
+*.apk
+.DS_Store
+
+
+.settings/org.eclipse.jdt.core.prefs
+
+bin/dexedLibs/android-support-v4-d2c38d794e8ed71ff643a6fe4118839a.jar
+
+libs/android-support-v4.jar
