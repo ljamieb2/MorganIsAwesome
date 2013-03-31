@@ -29,12 +29,11 @@ public class MyFirstAppActivity extends Activity {
 		b = (Button) findViewById(R.id.button);
 		final TextView rtv = (TextView) findViewById(R.id.responseTextView);
 		rtv.setScroller(new Scroller(getBaseContext()));
-		//rtv.setMaxLines(0);
-		
+		rtv.setMaxLines(25);
 		rtv.setVerticalScrollBarEnabled(true);
 		rtv.setMovementMethod(new ScrollingMovementMethod());
 		final String responsearray[] = new String[10];
-
+		
 			responsearray[0] = getResources().getString(R.string.response1);
 			responsearray[1] = getResources().getString(R.string.response2);
 			responsearray[2] = getResources().getString(R.string.response3);
@@ -50,28 +49,24 @@ public class MyFirstAppActivity extends Activity {
 		b.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				String userText = et.getText().toString();
-				if (count==10) {
-					responseDialog = "";
-					rtv.scrollTo(0,-10);
-					count=0;
-				}
-
 				responseDialog = responseDialog + "You: " + userText;
 				et.setText("");
 				if (count==2) {
 					responseDialog = responseDialog + "\n" + responsearray[count] + " " + userText + "\n\n";
-					rtv.setText(responseDialog);
-					count++;
+					rtv.setText(responseDialog);	
 				}
 				else
 				{	responseDialog = responseDialog + "\n" + responsearray[count] + "\n\n";
 				rtv.setText(responseDialog);
-				count++;
 				}
 				
 
-				
 
+				if (count==10) {
+					responseDialog = "";
+					count=0;
+				}
+				
 				
 				/*Toast msg = Toast.makeText(getBaseContext(), userText,
 						Toast.LENGTH_SHORT);
